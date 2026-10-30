@@ -100,7 +100,7 @@ h1{
 .opt .k{display:block;font-size:10px;letter-spacing:.3em;color:var(--amber);margin-bottom:14px}
 .opt .t{display:block;font-size:19px;letter-spacing:.06em;margin-bottom:9px;
   font-family:"Songti SC","Noto Serif SC",serif}
-.opt .d{display:block;font-size:12px;color:var(--dim);line-height:1.7;letter-spacing:.03em}
+.opt .d{display:block;font-size:12px;color:rgba(244,239,231,.72);line-height:1.7;letter-spacing:.03em}
 
 /* 结局 */
 h2{font-family:"Songti SC","Noto Serif SC",serif;font-size:clamp(26px,3.6vw,38px);
@@ -125,6 +125,6 @@ h2{font-family:"Songti SC","Noto Serif SC",serif;font-size:clamp(26px,3.6vw,38px
   .chrome{padding:16px 16px 30px}
   .brand .kind{display:none}
   .opt{width:100%;max-width:320px}
-  .options{gap:12px}
+  .options{gap:16px}
   .hint{font-size:10px}
 }
