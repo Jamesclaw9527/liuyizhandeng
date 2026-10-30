@@ -35,6 +35,7 @@
       <p class="log">深夜，小店要打烊了。<br>窗外有人借着店里的光，在读一封信。</p>
       <button class="cta" id="btnStart"><span>开始</span></button>
       <div class="hint">建议开启声音 · 全程约 40 秒</div>
+      <div class="loading" id="loadState" hidden>正在载入影片…</div>
     </div>
   </section>
 
@@ -97,6 +98,7 @@ const btnSkip = document.getElementById('btnSkip')
 const endTag = document.getElementById('endTag')
 const endTitle = document.getElementById('endTitle')
 const endLine = document.getElementById('endLine')
+const loadState = document.getElementById('loadState')
 
 const SRC = { open: 'assets/open.mp4', a: 'assets/a.mp4', b: 'assets/b.mp4' }
 const LABEL = { open: '开场', a: '分支 A · 把灯留着', b: '分支 B · 关灯出去' }
@@ -129,6 +131,7 @@ function play(key) {
   V.muted = muted
   V.play().catch(() => { V.muted = true; V.play().catch(() => {}) })
   chapterEl.textContent = LABEL[key]
+  loadState.hidden = false
   state = key === 'open' ? 'open' : 'branch'
 }
 
@@ -152,6 +155,8 @@ V.addEventListener('timeupdate', () => {
   if (state === 'open' && d && V.currentTime >= d - 0.35) toChoice()
 })
 
+V.addEventListener('playing', () => { loadState.hidden = true })
+V.addEventListener('waiting', () => { loadState.hidden = false })
 V.addEventListener('ended', () => {
   if (state === 'open') toChoice()
   else if (state === 'branch') showEnd()

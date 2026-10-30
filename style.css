@@ -82,6 +82,7 @@ h1{
   border-color:rgba(231,183,106,.6);box-shadow:0 0 34px rgba(231,183,106,.22);
   background:linear-gradient(180deg,rgba(231,183,106,.24),rgba(231,183,106,.1));
 }
+.loading{margin-top:10px;font-size:11px;color:var(--amber);letter-spacing:.12em;opacity:.85}
 .hint{margin-top:22px;font-size:11.5px;color:rgba(244,239,231,.55);letter-spacing:.1em}
 
 /* 选择 */
