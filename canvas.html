@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>画布 · 留一盏灯</title>
+<style>
+  :root{--ink:#15171C;--ink2:#4A515C;--ink3:#8A9099;--line:#E6E3DE;--paper:#F7F5F1;--amber:#B4762A}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--paper);color:var(--ink);font-family:"PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+       font-size:14px;line-height:1.7;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:54px 40px 80px}
+  .top{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--ink);padding-bottom:16px;margin-bottom:34px}
+  .top h1{font-size:26px;font-weight:600;letter-spacing:.02em}
+  .top .tag{font-size:11px;letter-spacing:.2em;color:var(--amber);border:1px solid #E2D4BE;
+            background:#FBF6EE;padding:3px 9px;border-radius:20px}
+  .top .meta{margin-left:auto;font-size:11.5px;color:var(--ink3)}
+  h2{font-size:12px;letter-spacing:.22em;color:var(--ink3);margin:34px 0 12px;font-weight:500}
+  .oneline{font-size:20px;line-height:1.8;font-weight:500;letter-spacing:.01em;
+           border-left:3px solid var(--amber);padding-left:18px}
+  .grid{display:grid;grid-template-columns:1.15fr 1fr;gap:26px;align-items:start}
+  img{width:100%;border-radius:8px;display:block;border:1px solid var(--line)}
+  .cap{font-size:11px;color:var(--ink3);margin-top:7px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th{text-align:left;font-size:11px;letter-spacing:.1em;color:var(--ink3);font-weight:500;
+     padding:0 10px 8px 0;border-bottom:1px solid var(--line)}
+  td{padding:12px 10px 12px 0;border-bottom:1px solid #EEEAE4;vertical-align:top;color:var(--ink2)}
+  td.k{color:var(--ink);font-weight:600;width:84px}
+  td.t{width:58px;font-variant-numeric:tabular-nums;color:var(--ink3)}
+  .files{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .file{border:1px solid var(--line);border-radius:8px;padding:12px 13px;background:#fff}
+  .file b{display:block;font-size:12.5px;margin-bottom:3px}
+  .file span{font-size:11px;color:var(--ink3)}
+  .note{margin-top:30px;padding:16px 18px;background:#fff;border:1px solid var(--line);border-radius:8px;
+        font-size:12px;color:var(--ink2);line-height:1.85}
+  .note b{color:var(--ink)}
+  a{color:var(--amber);text-decoration:none;border-bottom:1px solid #E3D3BC}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <h1>留一盏灯</h1>
+    <span class="tag">互动影游</span>
+    <div class="meta">画布 · 只读分享</div>
+  </div>
+
+  <h2>一句话故事</h2>
+  <div class="oneline">深夜小店要打烊了，门外有人借着店里的灯读信——她可以选择把灯留着，也可以关灯走出去。</div>
+
+  <div class="grid" style="margin-top:34px">
+    <div>
+      <h2 style="margin-top:0">主角与场景参考</h2>
+      <img src="assets/ref_key.jpg" alt="主角参考">
+      <div class="cap">关键画面：暖黄店内 / 冷蓝街外；女店主（短马尾、蓝围裙）、老人（灰呢外套、信纸）</div>
+    </div>
+    <div>
+      <h2 style="margin-top:0">交互结构</h2>
+      <table>
+        <tr><th>节点</th><th>内容</th></tr>
+        <tr><td class="k">开场</td><td>12 秒。店主的手停在开关上，老人在门外读信</td></tr>
+        <tr><td class="k">选择</td><td>「把灯留着」/「关灯，出去看看」</td></tr>
+        <tr><td class="k">分支 A</td><td>收回手、调亮灯、端热水出去，退回门内看他</td></tr>
+        <tr><td class="k">分支 B</td><td>关灯、拿伞出门、撑伞遮住他、两人回门口重开灯</td></tr>
+        <tr><td class="k">总时长</td><td>单次体验 ≈ 24 秒，全部内容 36 秒</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <h2>分镜</h2>
+  <table>
+    <tr><th class="t">时长</th><th class="k">镜号</th><th>画面</th><th>声音</th></tr>
+    <tr><td class="t">12s</td><td class="k">S1 开场</td>
+        <td>街对面缓慢推近到店门口。店内暖光，女店主手停开关上迟迟未按；门外老人借光读信，屋檐滴水，湿地反光。</td>
+        <td>夜虫、远处车声、水滴；无对白</td></tr>
+    <tr><td class="t">12s</td><td class="k">S2-A 留灯</td>
+        <td>她收回手，把灯调亮；转身倒一杯热水，推门放在老人身边的木凳上，退回门内靠着门框看他。</td>
+        <td>水声、杯底碰木凳、门轴轻响</td></tr>
+    <tr><td class="t">12s</td><td class="k">S2-B 出去</td>
+        <td>她按下开关，店内暗下；抓伞推门，撑伞站到老人身边，抬手指了指店门；两人一起走回，灯重新亮起。</td>
+        <td>开关咔哒、雨声变大、伞面展开、脚步</td></tr>
+  </table>
+
+  <h2>素材清单</h2>
+  <div class="files">
+    <div class="file"><b>open.mp4</b><span>开场 · 12s · 1280×720 · H.264</span></div>
+    <div class="file"><b>a.mp4</b><span>分支 A · 12s · 1280×720 · H.264</span></div>
+    <div class="file"><b>b.mp4</b><span>分支 B · 12s · 1280×720 · H.264</span></div>
+  </div>
+
+  <div class="note">
+    <b>说明</b>　三个片段由「智影 / 通义万相 wan3.0-video」文生视频生成，统一 16:9、720P、原生音轨；
+    开场与两条分支共用同一段人物与场景描述，保证气质与造型一致。互动网页为纯前端实现（HTML + CSS + JS），
+    含返回重选、跳过片头、倍速播放。
+  </div>
+</div>
+</body>
+</html>
